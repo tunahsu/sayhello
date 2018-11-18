@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_migrate import Migrate
 from flask_moment import Moment
+from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask('sayhello')
 app.config.from_pyfile('setting.py')
@@ -15,5 +16,8 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
+
+toolbar = DebugToolbarExtension(app)
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 from sayhello import views, errors, commands

@@ -3,6 +3,7 @@
 
 {% block content %}
 <div class="hello-form">
+    <!-- Bootstrap-Flask 內建渲染表的的 macro -->
     {{ render_form(form, action=request.full_path) }}
 </div>
 
@@ -19,6 +20,7 @@
             <h5 class="mb-1 text-success">{{ message.name }}
                 <small class="text-muted"> #{{ loop.revindex }}</small>
             </h5>
+            <!-- 調用 strftime 將時間戳格式化以提供 Moment.js 解析 -->
             <small data-toggle="tooltip" data-placement="top" data-timestamp="{{ message.timestamp.strftime('%Y-%m-%dT%H:%M:%SZ') }}"
                 data-delay="500">
                 {{ moment(message.timestamp).fromNow(refresh=True) }}
