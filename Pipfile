@@ -8,10 +8,12 @@ flask = "*"
 flask-sqlalchemy = "*"
 python-dotenv = "*"
 flask-wtf = "*"
-flask-migrate = "*"
 bootstrap-flask = "*"
+flask-moment = "*"
 
 [dev-packages]
+faker = "*"
+flask-migrate = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"

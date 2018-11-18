@@ -36,6 +36,7 @@
     </main>
 
     {{ bootstrap.load_js() }}
+    {{ moment.include_moment() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
